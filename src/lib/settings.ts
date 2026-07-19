@@ -72,7 +72,7 @@ export const DEFAULT_SETTINGS: Settings = {
   authToken: '',
   provider: 'openai',
   apiKey: '',
-  model: 'gpt-4o',
+  model: '',
   baseUrl: '',
   exportPath: 'src/components',
   theme: 'system',

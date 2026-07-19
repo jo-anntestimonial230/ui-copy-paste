@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="20" viewBox="0 0 124 20" role="img" aria-label="React: 18 + TS">
+  <title>React: 18 + TS</title>
+  <linearGradient id="g-react" x2="0" y2="100%">
+    <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <clipPath id="c-react">
+    <rect width="124" height="20" rx="3" fill="#fff"/>
+  </clipPath>
+  <g clip-path="url(#c-react)">
+    <rect width="56" height="20" fill="#555"/>
+    <rect x="56" width="68" height="20" fill="#0EA5E9"/>
+    <rect width="124" height="20" fill="url(#g-react)"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="11">
+    <text aria-hidden="true" x="28" y="15" fill="#010101" fill-opacity=".3">React</text>
+    <text x="28" y="14">React</text>
+    <text aria-hidden="true" x="90" y="15" fill="#010101" fill-opacity=".3">18 + TS</text>
+    <text x="90" y="14">18 + TS</text>
+  </g>
+</svg>

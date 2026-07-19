@@ -10,19 +10,19 @@
 </p>
 
 <p align="center">
-  <a href="#install-in-chrome"><img src="https://img.shields.io/badge/Chrome-MV3_Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome" /></a>
-  <a href="#bring-your-own-key"><img src="https://img.shields.io/badge/AI-BYOK_only-7C3AED?style=for-the-badge&logo=openai&logoColor=white" alt="BYOK" /></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge" alt="MIT" /></a>
-  <a href="#stack"><img src="https://img.shields.io/badge/React_18-TypeScript-0EA5E9?style=for-the-badge&logo=react&logoColor=white" alt="React TS" /></a>
-  <a href="#stack"><img src="https://img.shields.io/badge/Tailwind-v4-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind" /></a>
+  <a href="#install-in-chrome"><img src="docs/badges/chrome.svg" alt="Chrome MV3" /></a>
+  <a href="#bring-your-own-key"><img src="docs/badges/byok.svg" alt="BYOK" /></a>
+  <a href="LICENSE"><img src="docs/badges/license.svg" alt="MIT" /></a>
+  <a href="#stack"><img src="docs/badges/react.svg" alt="React TS" /></a>
+  <a href="#stack"><img src="docs/badges/tailwind.svg" alt="Tailwind" /></a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/node-%3E%3D20-brightgreen?style=flat-square&logo=node.js" alt="Node" />
-  <img src="https://img.shields.io/badge/pnpm-11-F69220?style=flat-square&logo=pnpm&logoColor=white" alt="pnpm" />
-  <img src="https://img.shields.io/badge/manifest-v3-yellow?style=flat-square" alt="MV3" />
-  <img src="https://img.shields.io/badge/i18n-EN%20%7C%20RU-blue?style=flat-square" alt="i18n" />
-  <img src="https://img.shields.io/github/stars/yiaany/ui-copy-paste?style=flat-square" alt="stars" />
+  <img src="docs/badges/node.svg" alt="Node" />
+  <img src="docs/badges/pnpm.svg" alt="pnpm" />
+  <img src="docs/badges/mv3.svg" alt="MV3" />
+  <img src="docs/badges/i18n.svg" alt="i18n" />
+  <a href="https://github.com/yiaany/ui-copy-paste/stargazers"><img src="docs/badges/stars.svg" alt="stars" /></a>
 </p>
 
 ---
@@ -33,8 +33,10 @@
   <img src="docs/screenshots/sidebar-main.png" width="280" alt="Main side panel" />
   &nbsp;
   <img src="docs/screenshots/sidebar-settings.png" width="280" alt="Settings — bring your own key" />
-  &nbsp;
-  <img src="docs/screenshots/capture-flow.png" width="280" alt="Capture flow" />
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/capture-flow.png" width="860" alt="Capture flow: pick element on a page with the side panel open" />
 </p>
 
 | Pick any element | Generate with your key | Export to project |
@@ -78,13 +80,15 @@ pnpm build          # → dist/
 
 ### 3. Load in Chrome
 
+<a id="install-in-chrome"></a>
+
 1. Open `chrome://extensions`
 2. Enable **Developer mode** (top-right)
 3. **Load unpacked** → select the `dist/` folder
 4. Pin the **UI Copy-Paste** icon
 
 <details>
-<summary>📸 Step-by-step</summary>
+<summary>Step-by-step</summary>
 
 1. Developer mode ON  
 2. Load unpacked → `…/ui-copy-paste/dist`  
@@ -98,108 +102,61 @@ pnpm build          # → dist/
 ```bash
 cd backend
 pnpm install --ignore-workspace
-cp .env.example .env          # optional: BACKEND_AUTH_TOKEN, PORT
-pnpm dev                      # http://localhost:8799
+cp .env.example .env   # Windows: copy .env.example .env
+pnpm dev               # http://localhost:8799
 ```
 
-Or double-click `backend/start-backend.bat` on Windows.
+Or double-click `backend/start-backend.bat` / root `start-all.bat`.
 
-### 5. Connect your API key
+### 5. Bring your own key
 
-1. Open the side panel → **Settings** (gear) → **Model**
-2. Choose provider:
-   - **OpenAI** — API key + model (e.g. `gpt-4o`)
-   - **Claude** — Anthropic key (model optional)
-   - **OpenAI-compat** — base URL + key + model (DeepSeek, Groq, local LM Studio, …)
-3. Save is automatic. Badge **own key** appears in the header.
+<a id="bring-your-own-key"></a>
 
-> Your key stays in `chrome.storage.local` and is sent to the backend **only for that request**. The backend does **not** log or store it.
+Open the side panel → **Settings** (gear) → **Model**:
 
-### 6. Capture & generate
+| Provider | What you paste |
+|---|---|
+| **OpenAI** | API key + model (default `gpt-4o`) |
+| **Claude** | Anthropic API key (model optional) |
+| **OpenAI-compat** | Base URL + key + model (DeepSeek, Groq, OpenRouter, LM Studio, …) |
 
-1. Open any site (e.g. `https://example.com`)
-2. Click the extension → **Pick an element** (or **Capture page**)
-3. Click the block you want
-4. Hit **Generate (AI)**
-5. **Copy** / **Download** / **To project**
+Keys live in `chrome.storage.local` and are sent only to *your* local backend, which proxies HTTPS to the provider. There is **no free tier** and **no shared quota**.
+
+### 6. Capture → Generate → Export
+
+1. On a normal https page, open the side panel  
+2. **Pick element** (or **Full page**)  
+3. Hover → click the block you want  
+4. **Generate (AI)** — stream polished React + Tailwind  
+5. **Copy** / **Download** / **To project** (`npx ui-copy-paste` in the target repo)
 
 ---
 
-## Install in Chrome (unpacked)
-
-```text
-chrome://extensions  →  Developer mode  →  Load unpacked  →  dist/
-```
-
-| Requirement | |
-|---|---|
-| Browser | Chrome / Edge / Brave (Chromium, MV3) |
-| Node | 20+ (22/24 OK) |
-| Package manager | pnpm 11+ |
-
-Dev mode with HMR:
+## Optional: write files into your repo
 
 ```bash
-pnpm dev            # Vite :5173, output still in dist/
-# then Reload the extension on chrome://extensions after manifest changes
-```
-
----
-
-## Bring your own key
-
-There is **no free shared tier**. Generate (AI) always uses the key you configure.
-
-| Provider | Fields |
-|---|---|
-| OpenAI | `apiKey`, `model` |
-| Claude (Anthropic) | `apiKey`, optional `model` |
-| OpenAI-compatible | `baseUrl`, `apiKey`, `model` |
-
-Examples for OpenAI-compat:
-
-| Service | Base URL | Model example |
-|---|---|---|
-| DeepSeek | `https://api.deepseek.com/v1` | `deepseek-chat` |
-| Groq | `https://api.groq.com/openai/v1` | `llama-3.3-70b-versatile` |
-| OpenRouter | `https://openrouter.ai/api/v1` | `openai/gpt-4o` |
-| LM Studio / local | `http://localhost:1234/v1` | your local model id |
-
----
-
-## Export to your editor
-
-### Clipboard / file
-- **Copy** — JSX/TSX to clipboard  
-- **Download** — `<Name>.tsx` or `.jsx`
-
-### Straight into the project
-
-In the **root of the target app**:
-
-```bash
+# in the project where components should land
 npx ui-copy-paste
-# listens on http://localhost:31337 and writes src/components/<Name>.tsx
+# bridge listens on http://localhost:31337
 ```
 
-Then press **To project** in the side panel.
+In the extension: Settings → Connection → bridge URL (default above) → export path (e.g. `src/components`).
 
 ---
 
 ## Architecture
 
 ```text
-┌─────────────┐     activeTab      ┌──────────────┐
-│  Side panel │ ◄────────────────► │ Content script│  (injected on click)
-│  (React)    │                    │ inspector DOM │
-└──────┬──────┘                    └──────────────┘
+┌─────────────┐   activeTab    ┌────────────────┐
+│  Side panel │◄──────────────►│ Content script │  (injected on click)
+│  (React)    │                │ inspector DOM  │
+└──────┬──────┘                └────────────────┘
        │ HTTP localhost
        ▼
-┌─────────────┐     BYOK key       ┌──────────────┐
-│   Backend   │ ─────────────────► │ OpenAI/Claude│
-│  :8799      │   passthrough      │ / compat API │
-└─────────────┘                    └──────────────┘
-       │
+┌─────────────┐   BYOK key     ┌────────────────┐
+│   Backend   │───────────────►│ OpenAI/Claude  │
+│  :8799      │   passthrough  │ / compat API   │
+└──────┬──────┘                └────────────────┘
        │ optional bridge :31337
        ▼
 ┌─────────────┐
@@ -216,6 +173,8 @@ Then press **To project** in the side panel.
 ---
 
 ## Stack
+
+<a id="stack"></a>
 
 | Layer | Tech |
 |---|---|
@@ -243,6 +202,12 @@ Backend:
 cd backend && pnpm dev
 ```
 
+Screenshots (dev):
+
+```bash
+pnpm build && node scripts/capture-screenshots.mjs
+```
+
 ---
 
 ## Project layout
@@ -258,7 +223,9 @@ ui-copy-paste/
 │  └─ lib/                  # settings, backend client, i18n, jsx render…
 ├─ backend/                 # Generate (AI) proxy (BYOK)
 ├─ cli/                     # npx ui-copy-paste bridge
-├─ docs/screenshots/        # README shots
+├─ docs/
+│  ├─ badges/               # README badge SVGs (always render)
+│  └─ screenshots/          # real UI shots (Playwright)
 └─ dist/                    # load this folder in Chrome
 ```
 
@@ -303,7 +270,7 @@ pnpm test && pnpm lint && pnpm typecheck
 ---
 
 <p align="center">
-  <a href="https://github.com/yiaany/ui-copy-paste">⭐ Star on GitHub</a>
+  <a href="https://github.com/yiaany/ui-copy-paste">★ Star on GitHub</a>
   ·
   <a href="https://github.com/yiaany/ui-copy-paste/issues">Report issue</a>
   ·

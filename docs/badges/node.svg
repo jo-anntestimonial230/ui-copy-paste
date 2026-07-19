@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="98" height="20" viewBox="0 0 98 20" role="img" aria-label="node: &gt;=20">
+  <title>node: &gt;=20</title>
+  <linearGradient id="g-node" x2="0" y2="100%">
+    <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <clipPath id="c-node">
+    <rect width="98" height="20" rx="3" fill="#fff"/>
+  </clipPath>
+  <g clip-path="url(#c-node)">
+    <rect width="49" height="20" fill="#555"/>
+    <rect x="49" width="49" height="20" fill="#339933"/>
+    <rect width="98" height="20" fill="url(#g-node)"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="11">
+    <text aria-hidden="true" x="24.5" y="15" fill="#010101" fill-opacity=".3">node</text>
+    <text x="24.5" y="14">node</text>
+    <text aria-hidden="true" x="73.5" y="15" fill="#010101" fill-opacity=".3">&gt;=20</text>
+    <text x="73.5" y="14">&gt;=20</text>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="179" height="20" viewBox="0 0 179 20" role="img" aria-label="Chrome: MV3 Extension">
+  <title>Chrome: MV3 Extension</title>
+  <linearGradient id="g-chrome" x2="0" y2="100%">
+    <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <clipPath id="c-chrome">
+    <rect width="179" height="20" rx="3" fill="#fff"/>
+  </clipPath>
+  <g clip-path="url(#c-chrome)">
+    <rect width="66" height="20" fill="#555"/>
+    <rect x="66" width="113" height="20" fill="#4285F4"/>
+    <rect width="179" height="20" fill="url(#g-chrome)"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="11">
+    <text aria-hidden="true" x="33" y="15" fill="#010101" fill-opacity=".3">Chrome</text>
+    <text x="33" y="14">Chrome</text>
+    <text aria-hidden="true" x="122.5" y="15" fill="#010101" fill-opacity=".3">MV3 Extension</text>
+    <text x="122.5" y="14">MV3 Extension</text>
+  </g>
+</svg>

